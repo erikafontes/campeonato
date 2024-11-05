@@ -4,13 +4,10 @@
         <h5 class="card-header">Edita Campeonato</h5>
         <div class="card-body">
             <form method="post">
-                <div class="mb-3"></div>
-                    <label for="id" class="form-label">ID</label>
-                    <input type="text" name="id" readonly id="id" class="form-control" value="<%=Categoria._id%>">
-                </div>
+               
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" name="nome" required id="nome" class="form-control" value="<%=Categoria.nome%>">
+                    <input type="text" name="nome" required id="nome" class="form-control" value="<%=campeonato.nome%>">
                 </div>
                 <div class="mb-3">
                     <input type="submit" value="Adicionar" class="form-control">

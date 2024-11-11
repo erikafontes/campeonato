@@ -2,11 +2,19 @@ import Usuario from '../models/usuario.js';
 import Campeonato from '../models/campeonato.js';
 import equipe from '../models/equipe.js';
 
-export async function listarusuarios(req, res){
+export async function listaratleta(req, res){
     const usuarios = await Usuario.find({}).catch(function(err){console.log(err)});
     res.render('admin/usuarios/lst', {usuarios: usuarios});
 }
-
+export async function abreaddatleta(req, res) {
+    res.render('admin/usuarios/add')
+}
+export async function addatleta(req, res) {
+    await Usuario.create({
+        nome:req.body.nome
+    })
+    res.redirect('/admin/usuario/add')
+}
 export async function detalhe(req, res) {
     const usuario = await Usuario.findById(req.params.id);
     res.render('admin/usuarios/detalhe', {usuario: usuario});
@@ -79,11 +87,11 @@ export async function deletaequipe(req, res) {
 }
 
 export async function abreedtequipe(req, res){
-    const equipe = await equipe.findById(req.params.id)
+    const equipes = await equipe.findById(req.params.id)
     res.render('admin/equipe/edt.ejs',{Equipe: equipe})
 }
 
 export async function edtequipe(req, res){
-    await Equipe.findByIdAndUpdate(req.params.id, req.body)
+    await equipe.findByIdAndUpdate(req.params.id, req.body)
     res.redirect('/admin/equipe/lst')
 }

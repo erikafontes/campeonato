@@ -4,7 +4,7 @@ const router = express.Router()
 import {    
         abreedtcampeonato, 
         edtcampeonato, 
-        listarusuarios, 
+        listaratleta, 
         detalhe, 
         abreaddcampeonato,
         deletacampeonato, 
@@ -17,11 +17,16 @@ import {
         filtrarequipe,
         deletaequipe,
         abreedtequipe,
-        edtequipe
+        edtequipe,
+        addatleta,
+        abreaddatleta
     } from '../controllers/admin.js';
 
-router.get("/admin/usuarios/lst", listarusuarios)
+router.get("/admin/usuarios/lst", listaratleta)
 router.get("/admin/usuarios/detalhe/:id", detalhe)
+
+router.get('/admin/usuarios/add', abreaddatleta)
+router.post('/admin/usuarios/add', addatleta)
 
 //create do modelo campeonato (create)
 router.get('/admin/campeonato/add', abreaddcampeonato)

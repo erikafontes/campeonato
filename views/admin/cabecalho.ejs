@@ -20,8 +20,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Campeonatos</a>
+
+
+            <img src="/campeonato.png" alt="logo" height="50px">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/usuarios/add">Adicionar Usuários</a>
+                </li>
+
                 <li class="nav-item active">
                     <a class="nav-link" href="/admin/usuarios/lst">Listar Usuários</a>
                 </li>
@@ -29,7 +35,7 @@
                     <a class="nav-link" href="/admin/campeonato/lst">Listar Campeonato</a>
                 </li>
                 <li class="nav-item"></li>
-                <a class="nav-link" href="/admin/campeonato/add">Adicionar Campeonato</a>
+                <a class="nav-link" href="/admin/campeonato/adminadd">Adicionar Campeonato</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/equipe/lst">Listar Equipe</a>
@@ -47,20 +53,24 @@
     <div class="row">
         <aside class="col-12 col-md-2 my-4">
             <ul class="nav flex-column">
+                
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/usuarios/lst">Listar usuários</a>
+                    <a class="nav-link" href="/admin/usuarios/add">Adicionar Usuários</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/campeonato/lst">Listar campeonato</a>
+                    <a class="nav-link" href="/admin/usuarios/lst">Listar Usuários</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/campeonato/add">Adicionar campeonato</a>
+                    <a class="nav-link" href="/admin/campeonato/lst">Listar Campeonatos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/equipe/lst">Listar equipe</a>
+                    <a class="nav-link" href="/admin/campeonato/add">Adicionar Campeonato</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/equipe/add">Adicionar equipe</a>
+                    <a class="nav-link" href="/admin/equipe/lst">Listar Equipes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/equipe/add">Adicionar Equipes</a>
                 </li>
             </ul>
         </aside>

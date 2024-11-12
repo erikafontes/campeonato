@@ -11,8 +11,7 @@
 
     <style>
         body {
-            background-color: #f0f0f0;
-            /* Fundo cinza */
+            background-color: #FFF3C1; /* Cor de fundo suave e quente */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -22,12 +21,11 @@
 
         .login-container {
             max-width: 400px;
-            padding: 20px;
+            padding: 30px;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            /* Responsividade */
         }
 
         .login-container img {
@@ -35,6 +33,57 @@
             /* Tamanho do logo */
             display: block;
             margin: 0 auto 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .form-control {
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 14px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        .form-control:focus {
+            border-color: #FFB400; /* Cor de foco para amarelo */
+            box-shadow: 0 0 6px rgba(255, 180, 0, 0.5);
+            outline: none;
+        }
+
+        .btn-primary {
+            background-color: #FFB400; /* Botão com o mesmo tom de amarelo */
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #eaa100;
+        }
+
+        .text-center a {
+            color: #FFB400; /* Links em amarelo */
+            text-decoration: none;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -46,7 +95,7 @@
         <img src="/campeonato.png" alt="Logo">
 
         <!-- Formulário de Login -->
-        <h2 class="text-center mb-4">Login</h2>
+        <h2 class="text-center">Login</h2>
         <form>
             <!-- Campo de email -->
             <div class="mb-3">
@@ -64,9 +113,9 @@
             <button type="submit" class="btn btn-primary w-100">Entrar</button>
         </form>
 
-        <!-- Link para cadastro -->
+        <!-- Link para recuperação de senha e criação de conta -->
         <div class="text-center mt-3">
-            <a href="#">Esqueceu sua senha?</a> | <a href="/home/aluno/Documentos/campeonato/views/cadastro.ejs">Criar conta</a>
+            <a href="#">Esqueceu sua senha?</a> | <a href="/cadastro">Criar conta</a>
         </div>
     </div>
 

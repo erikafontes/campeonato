@@ -1,88 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Campeonatos - Cadastro</title>
+    <title>Cadastro - Campeonatos</title>
     <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Estilo do corpo */
         body {
-            background-color: rgb(223, 237, 100);
-            border: solid 1px black;
-            width: 800px;
-            margin: auto;
+            font-family: 'Arial', sans-serif;
+            background-color: #FFF3C1; /* Cor de fundo mais suave e quente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        div,
-        p {
-            margin: 10px;
-        }
-
-        input[type="checkbox"] {
-            padding: 10px;
-            width: auto;
-        }
-
-        input {
-            padding: 10px;
-            width: 755px;
+        /* Contêiner do formulário */
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
         }
 
         h1 {
             text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
         }
 
-        button {
-            background-color: green;
-            color: aliceblue;
-            padding: 10px 20px;
-            font-size: large;
+        img {
+            width: 150px;
+            display: block;
+            margin: 0 auto 10px;
         }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        /* Estilo dos campos de input */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="file"]:focus {
+            border-color: #FFB400; /* Cor complementar ao amarelo */
+            box-shadow: 0 0 6px rgba(255, 180, 0, 0.5);
+            outline: none;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        /* Estilo do botão */
+        button {
+            background-color: #FFB400; /* Amarelo que combina com o logo */
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #eaa100;
+        }
+
+        /* Link de login */
+        p {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #FFB400; /* Mesmo tom de amarelo */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 500px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
     </style>
 </head>
-
 <body>
-    <h1>Cadastro</h1>
-    <form method="post">
-        <div>
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome">
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-        </div>
-        <div>
-            <label for="cpf">CPF</label>
-            <input type="text" name="cpf" id="cpf">
-        </div>
-        <div>
-            <label for="telefone">Telefone</label>
-            <input type="text" name="telefone" id="telefone">
-        </div>
-        <div>
-            <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco">
-        </div>
-        <div>
-            <label for="foto">Foto</label>
-            <input type="file" name="foto" id="foto">
-        </div>
-        <div>
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha">
-        </div>
-        <div>
-            <input type="checkbox" name="admin" id="admin">
-            <label for="admin">Admin?</label>
-        </div>
-        <div>
-            <button type="submit">Cadastrar</button>
-        </div>
-        <p>
-            Você já é cadastrado? <a href="/login">Clique aqui!</a>
-        </p>
-    </form>
+    <div class="form-container">
+        <h1><img src="/campeonato.png" alt="Logo"></h1>
+        <form method="post">
+            <div>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div>
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" id="cpf" required>
+            </div>
+            <div>
+                <label for="telefone">Telefone</label>
+                <input type="text" name="telefone" id="telefone" required>
+            </div>
+           
+           
+            <div>
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" required>
+            </div>
+            <div>
+                <input type="checkbox" name="admin" id="admin">
+                <label for="admin">Admin?</label>
+            </div>
+            <div>
+                <button type="submit">Cadastrar</button>
+            </div>
+            <p>Já é cadastrado? <a href="/login">Clique aqui!</a></p>
+        </form>
+    </div>
 </body>
-
 </html>

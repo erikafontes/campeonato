@@ -37,7 +37,7 @@ router.get('/admin/campeonato/lst', listarcampeonato)
 router.post('/admin/campeonato/lst', filtrarcampeonato)
 
 //rota do modelo campeonato (delete)
-router.get('/admin/campeonato/del/:id', deletacampeonato)
+router.get('/admin/campeonato/lst/:id', deletacampeonato)
 
 //rota do modelo campeonato (editar)
 router.get('/admin/campeonato/edt/:id', abreedtcampeonato)
@@ -52,7 +52,7 @@ router.get('/admin/equipe/lst', listarequipe)
 router.post('/admin/equipe/lst', filtrarequipe)
 
 //rota do modelo equipe (delete)
-router.get('/admin/equipe/del/:id', deletaequipe)
+router.get('/admin/equipe/lst/:id', deletaequipe)
 
 //rota do modelo equipe (editar)
 router.get('/admin/equipe/edt/:id', abreedtequipe)

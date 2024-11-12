@@ -26,7 +26,9 @@ export async function abreaddcampeonato(req, res) {
 
 export async function addcampeonato(req, res) {
     await Campeonato.create({
-        nome:req.body.nome
+        nome:req.body.nome,
+        jogos:req.body.jogos,
+        inicio:req.body.inicio
     })
     res.redirect('/admin/campeonato/add')
 }
@@ -37,7 +39,7 @@ export async function listarcampeonato(req, res) {
 }
 
 export async function filtrarcampeonato(req, res) {
-    const campeonatos = await Campeonato.find({nome: new RegExp(req.body.pesquisar,"i")})
+    const campeonatos = await Campeonato.find({inicio: new RegExp(req.body.pesquisar,"i")})
     res.render('admin/campeonato/lst',{Campeonatos: campeonatos});
 }
 
@@ -48,12 +50,12 @@ export async function deletacampeonato(req, res) {
 
 export async function abreedtcampeonato(req, res){
     const campeonato = await Campeonato.findById(req.params.id)
-    res.render('admin/campeonato/edt.ejs',{campeonato: campeonato.js})
+    res.render('admin/campeonato/edt.ejs',{campeonato: campeonato})
 }
 
 export async function edtcampeonato(req, res){
-    await Campeonato.findByIdAndUpdate(req.params.id, req.body)
-    res.redirect('/admin/campeonato/lst')
+    await Campeonato.findByIdAndUpdate(req.params.id,req.body)
+    res.redirect('/admin/campeonato/edt')
 }
 
 export async function abreaddequipe(req, res) {
@@ -83,15 +85,15 @@ export async function filtrarequipe(req, res) {
 
 export async function deletaequipe(req, res) {
     await equipe.findByIdAndDelete(req.params.id)
-    res.redirect('/admin/equipe/lst')
+res.redirect('/admin/equipe/lst')
 }
 
 export async function abreedtequipe(req, res){
     const equipes = await equipe.findById(req.params.id)
-    res.render('admin/equipe/edt.ejs',{Equipe: equipe})
+    res.render('admin/equipe/edt',{Equipe: equipe})
 }
 
 export async function edtequipe(req, res){
     await equipe.findByIdAndUpdate(req.params.id, req.body)
-    res.redirect('/admin/equipe/lst')
+    res.redirect('/admin/equipe/edt')
 }

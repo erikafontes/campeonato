@@ -7,8 +7,19 @@
                
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" name="nome" required id="nome" class="form-control" value="<%=campeonato.nome%>">
+                    <input type="text" name="nome" required id="nome" class="form-control" >
                 </div>
+               
+                <div class="mb-3">
+                    <label for="jogos" class="form-label">Quantidade de jogos</label>
+                    <input type="number" name="jogos" required id="jogos" class="form-control" value="<%=campeonato.jogos%>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="inicio" class="form-label">Data de início</label>
+                    <input type="date" name="inicio" id="inicio" value="<%=campeonato.inicio%>">
+                </div>
+
                 <div class="mb-3">
                     <input type="submit" value="Adicionar" class="form-control">
                 </div>

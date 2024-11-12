@@ -1,6 +1,6 @@
 import conexao from '../config/conexao.js'
 
-const Produto = conexao.Schema({
+const Equipe = conexao.Schema({
     nome: {type:String, required:true},
     valor: {type:Number},
     campeonato: {type:String},
@@ -8,4 +8,4 @@ const Produto = conexao.Schema({
     fotos: [{type:String}],
 })
 
-export default conexao.model('Produto',Produto)
+export default conexao.model('Equipe',Equipe)

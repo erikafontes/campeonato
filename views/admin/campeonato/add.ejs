@@ -1,30 +1,36 @@
-<%-include('../cabecalho.ejs')%>
-    <section class="col-12 col-md-10">
-        <div class="card my-4">
-            <h5 class="card-header">Adiciona Campeonato</h5>
-            <div class="card-body">
-                <form method="post">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" name="nome" required id="nome" class="form-control">
-                    </div>
+<%- include('../cabecalho.ejs') %>
 
+<section class="d-flex justify-content-center align-items-center" style="height: 100vh; background: linear-gradient(135deg, #0f2027, #0f2027, #2c5364);">
+    <!-- Cartão de Formulário -->
+    <div class="card w-100" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border-radius: 15px; max-width: 700px; width: 100%; padding: 30px;">
+        <h5 class="card-header" style="background: rgba(0, 0, 0, 0.1); color: #FFB400; font-size: 24px; padding: 15px; border-radius: 10px; text-align: center;">Adicionar Campeonato</h5>
+        <div class="card-body" style="color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <form method="post" class="mx-auto" style="max-width: 100%; width: 100%; padding: 0 20px;">
+                <!-- Campo Nome -->
+                <div class="mb-3">
+                    <label for="nome" class="form-label" style="font-size: 18px;">Nome</label>
+                    <input type="text" name="nome" required id="nome" class="form-control" style="background: rgba(255, 255, 255, 0.2); border-radius: 10px; color: #fff; border: none; padding: 12px;">
+                </div>
 
-                    <div class="mb-3">
-                        <label for="jogos" class="form-label">Quantidade de jogos</label>
-                        <input type="number" name="jogos" required id="jogos" class="form-control">
-                    </div>
+                <!-- Campo Quantidade de Jogos -->
+                <div class="mb-3">
+                    <label for="jogos" class="form-label" style="font-size: 18px;">Quantidade de jogos</label>
+                    <input type="number" name="jogos" required id="jogos" class="form-control" style="background: rgba(255, 255, 255, 0.2); border-radius: 10px; color: #fff; border: none; padding: 12px;">
+                </div>
 
-                    <div class="mb-3">
-                        <label for="inicio" class="form-label">Data de início</label>
-                        <input type="date" name="inicio" id="inicio">
-                    </div>
+                <!-- Campo Data de Início -->
+                <div class="mb-3">
+                    <label for="inicio" class="form-label" style="font-size: 18px;">Data de início</label>
+                    <input type="date" name="inicio" id="inicio" class="form-control" style="background: rgba(255, 255, 255, 0.2); border-radius: 10px; color: #fff; border: none; padding: 12px;">
+                </div>
 
-                    <div class="mb-3">
-                        <input type="submit" value="Adicionar" class="form-control">
-                    </div>
-                </form>
-            </div>
+                <!-- Botão Adicionar -->
+                <div class="mb-3">
+                    <input type="submit" value="Adicionar" class="form-control" style="background-color: #FFB400; color: white; border: none; border-radius: 10px; font-size: 18px; padding: 12px; cursor: pointer;">
+                </div>
+            </form>
         </div>
-    </section>
-    <%-include('../rodape.ejs')%>
+    </div>
+</section>
+
+<%- include('../rodape.ejs') %>

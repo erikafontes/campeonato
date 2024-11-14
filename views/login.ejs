@@ -4,126 +4,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Campeonatos - Login</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Estilo Customizado -->
     <style>
         body {
-            background-color: #FFF3C1; /* Cor de fundo suave e quente */
-            height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0;
+            height: 100vh;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .login-container {
-            max-width: 400px;
-            padding: 30px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            max-width: 350px;
             width: 100%;
         }
 
         .login-container img {
-            max-width: 100px;
-            /* Tamanho do logo */
-            display: block;
-            margin: 0 auto 20px;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 28px;
-            color: #333;
+            width: 80px;
             margin-bottom: 20px;
         }
 
-        label {
-            font-size: 14px;
-            color: #555;
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
         }
 
         .form-control {
-            border-radius: 6px;
-            padding: 12px;
-            font-size: 14px;
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            color: #fff;
+        }
+
+        .form-control::placeholder {
+            color: #ddd;
         }
 
         .form-control:focus {
-            border-color: #FFB400; /* Cor de foco para amarelo */
-            box-shadow: 0 0 6px rgba(255, 180, 0, 0.5);
+            box-shadow: 0 0 10px rgba(255, 180, 0, 0.5);
+            border: none;
             outline: none;
         }
 
-        .btn-primary {
-            background-color: #FFB400; /* Botão com o mesmo tom de amarelo */
-            color: white;
-            padding: 14px;
+        .btn-custom {
+            background-color: #FFB400;
+            color: #fff;
             border: none;
-            border-radius: 6px;
-            font-size: 16px;
+            padding: 12px;
+            border-radius: 10px;
             width: 100%;
-            transition: background-color 0.3s;
+            font-size: 16px;
+            transition: 0.3s;
         }
 
-        .btn-primary:hover {
+        .btn-custom:hover {
             background-color: #eaa100;
         }
 
         .text-center a {
-            color: #FFB400; /* Links em amarelo */
+            color: #FFB400;
             text-decoration: none;
         }
 
         .text-center a:hover {
             text-decoration: underline;
         }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="login-container">
+    <div class="login-container fade-in">
         <!-- Logo -->
-        <img src="/campeonato.png" alt="Logo">
+        <img src="/campeonato.png" alt="Logo" class="d-block mx-auto">
 
         <!-- Formulário de Login -->
-        <h2 class="text-center">Login</h2>
-        <form>
+        <h2 class="text-center">Bem-vindo</h2>
+        <form id="loginForm">
             <!-- Campo de email -->
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+            <div class="mb-4">
                 <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
             </div>
 
             <!-- Campo de senha -->
-            <div class="mb-3">
-                <label for="password" class="form-label">Senha</label>
+            <div class="mb-4">
                 <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
             </div>
 
             <!-- Botão de login -->
-            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            <button type="submit" class="btn btn-custom">Entrar</button>
         </form>
 
-        <!-- Link para recuperação de senha e criação de conta -->
+        <!-- Links de ajuda -->
         <div class="text-center mt-3">
-            <a href="#">Esqueceu sua senha?</a> | <a href="/cadastro">Criar conta</a>
+            <a href="#">Esqueceu a senha?</a> | <a href="/cadastro">Criar conta</a>
         </div>
     </div>
 
-    <!-- Link para o Bootstrap JS (caso precise de interatividade) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pzjw8f+ua7Kw1TIq0OTy1J9oKYB8r5A4c5iwXc9YoRlWuZ1FqzFEFk9fO4JZZP7p"
-        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- JavaScript para Redirecionamento -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simulação de login (substitua com sua lógica de validação)
+          //  if (email === 'usuario@exemplo.com' && password === '123456') {
+                // Redirecionar para o dashboard após login bem-sucedido
+                window.location.href = 'admin/campeonato/lst';
+         //   } else {
+            //    alert('Email ou senha incorretos. Tente novamente.');
+        //    }
+        });
+    </script>
 </body>
 
 </html>

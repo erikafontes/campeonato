@@ -9,7 +9,6 @@ const Usuario = conexao.Schema({
     cpf: 'String',
     admin: 'Boolean',
     datanasc: { type: Date, default: Date.now },
-    equipe: {type:String, required:true},
 })
 
 export default conexao.model('Usuario',Usuario)

@@ -30,7 +30,7 @@ export async function addcampeonato(req, res) {
         jogos:req.body.jogos,
         inicio:req.body.inicio
     })
-    res.redirect('/admin/campeonato/add')
+    res.redirect('/admin/campeonato/lst')
 }
 
 export async function listarcampeonato(req, res) {
@@ -39,7 +39,7 @@ export async function listarcampeonato(req, res) {
 }
 
 export async function filtrarcampeonato(req, res) {
-    const campeonatos = await Campeonato.find({inicio: new RegExp(req.body.pesquisar,"i")})
+    const campeonatos = await Campeonato.find()
     res.render('admin/campeonato/lst',{Campeonatos: campeonatos});
 }
 

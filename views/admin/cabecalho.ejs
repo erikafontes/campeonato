@@ -11,40 +11,52 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- Font Awesome para ícones -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <!-- Estilo Customizado -->
     <style>
-        /* Definindo a cor de fundo do body e garantindo que não mude em nenhum lugar */
         body {
-            background: linear-gradient(135deg, #0f2027, #0f2027, #2c5364); /* Definindo a cor de fundo */
-            color: #fff; /* Definindo a cor do texto */
+            background: linear-gradient(135deg, #0f2027, #2c5364);
+            color: #fff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0; /* Removendo margens da página */
-            padding: 0; /* Removendo paddings da página */
-            height: 100vh; /* Garantindo que a altura seja 100% da tela */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
         }
 
-        /* Estilo do cabeçalho */
         .navbar-custom {
-            background: rgba(255, 255, 255, 0.1); /* Cor de fundo do cabeçalho */
-            padding: 15px 30px;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 40px;
+            border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
-            margin-bottom: 20px; /* Adicionando espaço abaixo do cabeçalho */
         }
 
-        .navbar-custom img {
-            height: 50px;
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .nav-item {
+            margin: 0 10px;
         }
 
         .nav-link {
             color: #FFB400;
-            font-weight: 500;
             font-size: 18px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .nav-link:hover {
-            color: #eaa100;
+            background-color: #FFB400;
+            color: #fff;
         }
 
         .navbar-toggler {
@@ -55,7 +67,6 @@
             background-color: #FFB400;
         }
 
-        /* Estilo para o campo de pesquisa */
         .form-control-search {
             width: 300px;
             height: 40px;
@@ -66,7 +77,6 @@
             padding-right: 45px;
             color: #fff;
             transition: 0.3s;
-            position: relative;
         }
 
         .form-control-search::placeholder {
@@ -88,57 +98,82 @@
             font-size: 20px;
         }
 
-        /* Estilo do botão */
-        .btn-custom {
-            background-color: #FFB400;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
+        /* Estilo para as opções do dropdown */
+        .dropdown-menu {
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            font-size: 18px;
-            transition: 0.3s;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-custom:hover {
-            background-color: #eaa100;
+        .dropdown-item {
+            color: #FFB400;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #FFB400;
+            color: #fff;
+        }
+
+        .dropdown-item:focus {
+            background-color: #FFB400;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
     <!-- Cabeçalho -->
-    <nav class="navbar navbar-expand-md navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">
+            <img src="/campeonato.png" alt="Logo">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Alternar navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">
-            <img src="/campeonato.png" alt="Logo">
-        </a>
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/usuarios/add">Adicionar Usuários</a>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+            <ul class="navbar-nav">
+                <!-- Dropdown para Usuários -->
+
+
+                <!-- Dropdown para Campeonatos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCampeonatos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Campeonatos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownCampeonatos">
+                        <a class="dropdown-item" href="/admin/campeonato/add">Adicionar Campeonato</a>
+                        <a class="dropdown-item" href="/admin/campeonato/lst">Listar Campeonatos</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/usuarios/lst">Listar Usuários</a>
+
+                <!-- Dropdown para Equipes -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEquipes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Equipes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownEquipes">
+                        <a class="dropdown-item" href="/admin/equipe/add">Adicionar Equipe</a>
+                        <a class="dropdown-item" href="/admin/equipe/lst">Listar Equipes</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/campeonato/lst">Listar Campeonatos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/campeonato/add">Adicionar Campeonato</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/equipe/lst">Listar Equipes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/equipe/add">Adicionar Equipes</a>
+<!-- Dropdown para Usuários -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUsuarios" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Atletas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUsuarios">
+                        <a class="dropdown-item" href="/admin/usuarios/add">Adicionar Atleta</a>
+                        <a class="dropdown-item" href="/admin/usuarios/lst">Listar Atletas</a>
+                    </div>
                 </li>
             </ul>
-            <div class="position-relative">
+            <div class="position-relative d-none d-lg-block">
                 <input type="search" class="form-control-search" placeholder="Pesquisar..." aria-label="Pesquisar">
-                <!-- Ícone de lupa da Font Awesome -->
                 <i class="fas fa-search search-icon"></i>
             </div>
         </div>
@@ -157,3 +192,4 @@
 </body>
 
 </html>
+

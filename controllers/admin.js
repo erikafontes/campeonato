@@ -1,23 +1,31 @@
 import Usuario from '../models/usuario.js';
 import Campeonato from '../models/campeonato.js';
 import equipe from '../models/equipe.js';
+import Atleta from '../models/atleta.js'
 
 export async function listaratleta(req, res){
-    const usuarios = await Usuario.find({}).catch(function(err){console.log(err)});
+    const usuarios = await Atleta.find({}).catch(function(err){console.log(err)});
     res.render('admin/usuarios/lst', {usuarios: usuarios});
 }
 export async function abreaddatleta(req, res) {
     res.render('admin/usuarios/add')
 }
 export async function addatleta(req, res) {
-    await Usuario.create({
-        nome:req.body.nome
+    await Atleta.create({
+        nome:req.body.nome,
+        email:req.body.email,
+        datanasc:req.body.datanasc
     })
-    res.redirect('/admin/usuario/add')
+    res.redirect('/admin/usuarios/add')
 }
 export async function detalhe(req, res) {
-    const usuario = await Usuario.findById(req.params.id);
+    const usuario = await Atleta.findById(req.params.id);
     res.render('admin/usuarios/detalhe', {usuario: usuario});
+}
+
+export async function filtraratleta(req, res) {
+    const usuarios = await Atleta.find({nome: new RegExp(req.body.pesquisar,"i")})
+    res.render('admin/usuarios/lst',{usuarios: usuarios});
 }
 
 export async function abreaddcampeonato(req, res) {
@@ -39,7 +47,7 @@ export async function listarcampeonato(req, res) {
 }
 
 export async function filtrarcampeonato(req, res) {
-    const campeonatos = await Campeonato.find()
+    const campeonatos = await Campeonato.find({nome: new RegExp(req.body.pesquisar,"i")})
     res.render('admin/campeonato/lst',{Campeonatos: campeonatos});
 }
 

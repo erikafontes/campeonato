@@ -19,10 +19,12 @@ import {
         abreedtequipe,
         edtequipe,
         addatleta,
-        abreaddatleta
+        abreaddatleta,
+        filtraratleta
     } from '../controllers/admin.js';
 
 router.get("/admin/usuarios/lst", listaratleta)
+router.post("/admin/usuarios/lst", filtraratleta)
 router.get("/admin/usuarios/detalhe/:id", detalhe)
 
 router.get('/admin/usuarios/add', abreaddatleta)
